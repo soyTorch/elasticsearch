@@ -9,3 +9,7 @@ COPY --chown=1000:0 config/elasticsearch.yml /usr/share/elasticsearch/config/ela
 RUN chmod g+ws /usr/share/elasticsearch/config
 
 USER 1000:0
+
+ENV ES_JAVA_OPTS="-Xms256m -Xmx256m"
+ENV network.host=0.0.0.0
+ENV http.port=9200
